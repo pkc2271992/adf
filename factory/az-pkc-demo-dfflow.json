@@ -1,0 +1,9 @@
+{
+	"name": "az-pkc-demo-dfflow",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "1cba0ee7-7570-4456-9ff8-21c7dbdd31e6",
+		"tenantId": "52c08c46-c3f9-496e-ad79-ed1935fb0fbf"
+	}
+}

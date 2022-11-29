@@ -1,0 +1,84 @@
+{
+	"name": "Variable and Array",
+	"properties": {
+		"description": "Demo on variable and Array.",
+		"activities": [
+			{
+				"name": "Set_file_name",
+				"description": "setting file name.",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "FileNme",
+					"value": "Demo.txt"
+				}
+			},
+			{
+				"name": "Array_start",
+				"description": "Starting array.",
+				"type": "AppendVariable",
+				"dependsOn": [
+					{
+						"activity": "Set_file_name",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "Arr",
+					"value": "val1"
+				}
+			},
+			{
+				"name": "Set_file_name2",
+				"description": "Again setting file name",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "Array_start",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "FileNme",
+					"value": "test.txt"
+				}
+			},
+			{
+				"name": "Appending_Array",
+				"description": "Appending Arr.",
+				"type": "AppendVariable",
+				"dependsOn": [
+					{
+						"activity": "Set_file_name2",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "Arr",
+					"value": "val2"
+				}
+			}
+		],
+		"variables": {
+			"FileNme": {
+				"type": "String"
+			},
+			"Arr": {
+				"type": "Array"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2022-10-13T16:44:04Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

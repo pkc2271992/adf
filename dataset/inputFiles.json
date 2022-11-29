@@ -1,0 +1,35 @@
+{
+	"name": "inputFiles",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "StoreBlb",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"InputFile": {
+				"type": "String"
+			}
+		},
+		"folder": {
+			"name": "Store02"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": {
+					"value": "@dataset().InputFile",
+					"type": "Expression"
+				},
+				"container": "store"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
